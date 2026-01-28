@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koko: My Favorite Notification</title>
+    
+    <link rel="stylesheet" href="maincs.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Dancing+Script:wght@700&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="canvas"></canvas>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="music-widget">
+        <div class="equalizer">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <div class="track-info">
+            <span class="track-name">Our Love Theme</span>
+            <span class="artist">The Soundtrack of Us</span>
+        </div>
+        <button id="playPauseBtn" class="play-btn"><i class="fas fa-play"></i></button>
+        <audio id="bgMusic" loop>
+            <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112762.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <header class="hero">
+        <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
+            <p class="glitch-text" data-text="System Override: Love Found">System Override: Love Found</p>
+            <h1>Happy Birthday <span class="highlight">Koko</span></h1>
+            <div class="typewriter">
+                <span id="typing-text"></span><span class="cursor">|</span>
+            </div>
+            <div class="scroll-indicator">
+                <span>Start the Game</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="stats-section">
+        <div class="glass-panel" data-aos="fade-up">
+            <div class="stat-box">
+                <i class="fas fa-calendar-alt"></i>
+                <h3 id="timer">000</h3>
+                <p>Days Since We Became "Us"</p>
+                <small>Est. Dec 24, 2024</small>
+            </div>
+            <div class="stat-box heartbeat">
+                <i class="fas fa-heart"></i>
+                <h3>&infin;</h3>
+                <p>Love Level</p>
+                <small>Maxed Out Stats</small>
+            </div>
+            <div class="stat-box">
+                <i class="fas fa-gamepad"></i>
+                <h3>Player 2</h3>
+                <p>Status: <span style="color:#ff4d88">Connected</span></p>
+                <small>Ready to Carry</small>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-chapter">
+        <div class="chapter-content">
+            <h2 class="section-title" data-aos="fade-right">The Origin Story</h2>
+            
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="icon-box"><i class="fas fa-headset"></i></div>
+                <div class="text-box">
+                    <h3>The Voice in the Lobby</h3>
+                    <p>It was supposed to be just another match. Just another Valorant lobby. But then you spoke. It wasn't just a comm; it was a melody. I paused. I listened. And for the first time, I didn't care about the scoreboard. I just wanted to know who <i>you</i> were.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                <div class="text-box">
+                    <h3>The Spark</h3>
+                    <p>Late nights turned into early mornings. We talked about games, life, fears, and dreams. I realized you weren't just a teammate; you were the missing piece of my puzzle. The Glitch in my Matrix that made everything colorful.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="icon-box"><i class="fas fa-infinity"></i></div>
+                <div class="text-box">
+                    <h3>Dec 24, 2024</h3>
+                    <p>The best Christmas gift wasn't under a tree. It was the moment we decided to face the world together. Level 1 of our forever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="generator-section">
+        <h2 data-aos="zoom-in">Why You?</h2>
+        <div class="generator-card" data-aos="flip-up">
+            <div id="reasonDisplay" class="reason-text">Click the button to see why I love you...</div>
+            <button id="generateBtn" class="glow-btn">Tell Me Why ❤️</button>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2 class="section-title">Visual Memories</h2>
+        <div class="masonry">
+            <div class="item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?q=80&w=600" alt="Love Art"></div>
+            <div class="item tall" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1621817385322-6b453303d8d3?q=80&w=600" alt="Anime Couple Art"></div>
+            <div class="item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1523289333742-be1143f6b766?q=80&w=600" alt="Gaming Setup"></div>
+            <div class="item tall" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600" alt="Beautiful Girl Art"></div>
+            <div class="item" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1542351967-d5ae722fed71?q=80&w=600" alt="Us"></div>
+        </div>
+    </section>
+
+    <section class="bucket-list">
+        <h2 class="section-title" data-aos="fade-up">Our Side Quests</h2>
+        <div class="checklist" data-aos="fade-up">
+            <div class="check-item"><i class="fas fa-check-square"></i> Meet in the game (Done)</div>
+            <div class="check-item"><i class="fas fa-check-square"></i> Fall in love (Done)</div>
+            <div class="check-item"><i class="far fa-square"></i> Meet in person & hug for 5 minutes straight</div>
+            <div class="check-item"><i class="far fa-square"></i> Go on a late-night drive with no destination</div>
+            <div class="check-item"><i class="far fa-square"></i> Reach Radiant together (or just have fun trying)</div>
+            <div class="check-item"><i class="far fa-square"></i> Grow old and still game together</div>
+        </div>
+    </section>
+
+    <section class="final-letter">
+        <div class="envelope" data-aos="zoom-in">
+            <div class="letter-content">
+                <h3>To My Koko,</h3>
+                <p>
+                    I don't know what I did to deserve you, but I promise to spend every day earning it. You are my safe space, my adrenaline rush, and my home.
+                    <br><br>
+                    Thank you for being you. Thank you for choosing me.
+                    <br><br>
+                    Happy Birthday, my love.
+                </p>
+                <div class="signature">- Your Player 1</div>
+                <button id="finalSurpriseBtn">One Last Surprise ✨</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Created with <i class="fas fa-heart pulse"></i> solely for Koko.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="mainjs.js"></script>
+</body>
+</html>
